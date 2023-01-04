@@ -15,6 +15,7 @@ export default defineComponent({
     })
     const isCol = computed(() => {
       const regExp = /^el-col,el-col-24(,is-guttered)?$/
+
       return !(!props.span && regExp.test(colClass.value.join()))
     })
 
