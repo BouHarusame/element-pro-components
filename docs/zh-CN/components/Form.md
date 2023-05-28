@@ -29,7 +29,7 @@ meta:
 
 ### 智能提示
 
-通过辅助函数 `defineFormColumns` `defineFormMenuColumns` `defineFormSubmit` 提供智能提示
+通过辅助函数 `defineFormColumns` `defineFormMenuColumns` `defineFormSubmit` `defineComponentProps` 提供智能提示
 
 ::: demo
 @/demo/Form/define.vue
@@ -103,6 +103,14 @@ meta:
 
 ::: demo
 @/demo/Form/dynamically.vue
+:::
+
+### 联动表单
+
+通过控制 `columns` 中的 `show` 字段可以动态控制表单的显示，很容易实现联动表单
+
+::: demo
+@/demo/Form/show.vue
 :::
 
 ### 栅格布局
@@ -179,7 +187,7 @@ meta:
 
 ### TypeScript
 
-`defineFormColumns` 支持传入一个泛型用来推断 `prop` 值
+`defineFormColumns` 支持传入一个泛型用来推断 `prop` 值；`defineComponentProps` 支持传入一个泛型用来辅助输入 `props` 值
 
 ::: demo
 @/demo/Form/typescript.vue
@@ -222,6 +230,7 @@ meta:
 | children      | 分组表单或子表单内容                                                      | array              | -                                         | -      |
 | type          | children 内部表单的类型                                                   | string             | array / group / tabs / collapse / steps   | array  |
 | max           | 限制 `type=array` 时子表单的最大数量                                      | number             | -                                         | -      |
+| show          | 是否在表单中显示当前项                                                    | boolean            | -                                         | true   |
 | labelWidth    | 表单域标签的宽度，例如 '50px' 或 'auto'                                   | string             | -                                         | -      |
 | required      | 是否必填，如不设置，则会根据校验规则自动生成                              | boolean            | -                                         | false  |
 | rules         | 表单验证规则                                                              | object / array     | -                                         | -      |

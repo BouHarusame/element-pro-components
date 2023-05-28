@@ -1,5 +1,44 @@
 # Changelog
 
+### 1.2.10
+
+feat
+
+- Form: add show attribute to column (#459)
+
+fix
+
+- Crud: the size of button is overwritten (#460)
+
+perf
+
+- Table: optimize rendering of hidden table column (#456)
+
+### 1.2.9
+
+feat
+
+- Form: refactor FormComponent (#446)
+- add ElementProResolver from unplugin-vue-components (#447)
+- type: add type helper defineComponentProps (#445)
+
+### 1.2.8
+
+fix
+
+- build Error Nodejs^15 Cannot find module 'node:path' (#431)
+- Form: validation error of ArrayForm (#440)
+- Form: disable reset button when submit (#442)
+
+other
+
+- add CODE_OF_CONDUCT.md (#432)
+- add issue template (#433)
+- docs: add contributing.md (#436)
+- add pull_request_template.md (#437)
+- Form: optimization type (#438)
+- update README (#439)
+
 ### 1.2.7
 
 feat

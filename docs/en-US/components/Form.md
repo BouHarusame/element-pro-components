@@ -29,7 +29,7 @@ When columns is bound to a reactive array, changes in the array will affect form
 
 ### Intellisense
 
-Use the `defineFormColumns` `defineFormMenuColumns` `defineFormSubmit` to make it easier to define columns
+Use the `defineFormColumns` `defineFormMenuColumns` `defineFormSubmit` `defineComponentProps` to make it easier to define columns
 
 ::: demo
 @/demo/Form/define.vue
@@ -103,6 +103,14 @@ If the columns with reactive, the dynamically modified columns form will also ch
 
 ::: demo
 @/demo/Form/dynamically.vue
+:::
+
+### Linkage Form
+
+By controlling the `show` field of `columns`, the display of the form can be dynamically controlled, making it easy to achieve linked forms
+
+::: demo
+@/demo/Form/show.vue
 :::
 
 ### Layout
@@ -179,7 +187,7 @@ To implement Async Form, columns must be bound to a reactive array
 
 ### TypeScript
 
-The function `defineFormColumns` supports passing in a Generics type to infer the value of `prop`
+The function `defineFormColumns` supports passing in a Generics type to infer the value of `prop`, The function `defineComponentProps` supports passing in a Generics type to help input the `props` value
 
 ::: demo
 @/demo/Form/typescript.vue
@@ -222,6 +230,7 @@ The function `defineFormColumns` supports passing in a Generics type to infer th
 | children      | group form or sub-form content                                                                         | array                                       | -                                         | -       |
 | type          | type of children internal forms                                                                        | string                                      | array / group / tabs / collapse / steps   | array   |
 | max           | limit the maximum number of `type=array`                                                               | number                                      | -                                         | -       |
+| show          | whether to show the current component                                                                  | boolean                                     | -                                         | true    |
 | labelWidth    | width of label, e.g. '50px'. Width `auto` is supported.                                                | string                                      | -                                         | -       |
 | required      | whether the field is required or not, will be determined by validation rules if omitted                | boolean                                     | -                                         | false   |
 | rules         | validation rules of form                                                                               | object                                      | -                                         | -       |

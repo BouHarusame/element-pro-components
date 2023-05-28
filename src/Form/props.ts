@@ -12,7 +12,11 @@ import {
 } from '../utils/index'
 import type { Component, PropType } from 'vue'
 import type { CollapseModelValue, TabPaneName } from 'element-plus'
-import type { ExternalParam, UnknownObject } from '../types/index'
+import type {
+  ColumnPropsSlots,
+  ExternalParam,
+  UnknownObject,
+} from '../types/index'
 import type {
   IFormColumns,
   IFormMenuColumns,
@@ -52,16 +56,16 @@ export const formComponentProps = {
   modelValue: null,
   is: {
     type: [String, Object] as PropType<string | Component>,
-    default: 'span',
+    require: true,
   },
-  slots: [Function, Object, String],
+  slots: [Function, Object, String] as PropType<ColumnPropsSlots>,
 }
 
 const _formItemProps = objectPick(formItemProps, 'prefix', 'indexes')
 export const arrayFormProps = {
   ..._formItemProps,
   modelValue: {
-    type: Array,
+    type: Array as PropType<UnknownObject[]>,
     default: () => [],
   },
   columns: Array as PropType<IFormColumns>,
